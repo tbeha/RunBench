@@ -1,0 +1,130 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> dl360-3n-ao-run1 </name>
+		<path> .\\3ndl360-ao </path>
+		<description> 
+DL360 - 3 Node VSA Benchmark - baseline run
+	LeftHand OS 12.6.00.0155.0
+	CentOS KVM VSAs with raw disks
+    SmartArray cache default setting 10/90 r/w, no cache for the SSDs
+    7 x 1.2TB 10k SAS HDD per VSA;  
+Disks per W2k12R2 bench VM:
+12 x 800 GB Volumes
+   Network RAID 10
+   AO enabled, all data resides on Tier 0  
+   Disks mapped the to CentOS server via iSCSI
+   cluster utilization: 98%
+Servers: benchVMs (Windows 2012R2) external on VMware Server (HC250)
+	svbenchvm-1, 
+	svbenchvm-2, 
+	svbenchvm-3 
+data locality: VSA gateway nodes were hosted on the same DL360 server (CMC site definition)
+prefill: yes
+Start: 05/11/2016
+(c) Thomas Beha 
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.1]</offset>
+	</Load>  
+	<Load>
+		<access> segmented </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 262144 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.1] </offset>
+	</Load>
+	<Host> 
+	    <name> 192.168.55.44 </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>
+	<Host>  
+		<name> 192.168.55.45 </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>		
+	<Host>  
+		<name> 192.168.55.46 </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>	
+	<Host>  
+		<name> 192.168.55.44 </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>
+	<Host>  
+		<name> 192.168.55.45 </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>	
+	<Host>  
+		<name> 192.168.55.46 </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>	
+	    <name> sdsdl360-1.vdi.local </name>
+		<disk> /dev/sdf </disk>
+	</Host>
+	<Host>  
+		<name> sdsdl360-2.vdi.local </name>
+		<disk> /dev/sdf </disk>
+	</Host>		
+	<Host>  
+		<name> sdsdl360-3.vdi.local </name>
+		<disk> /dev/sdf </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-1.vdi.local </name>
+		<disk> /dev/sdg </disk>
+	</Host>
+	<Host>  
+		<name> sdsdl360-2.vdi.local </name>
+		<disk> /dev/sdg </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-3.vdi.local </name>
+		<disk> /dev/sdg </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-1.vdi.local </name>
+		<disk> /dev/sdh </disk>
+	</Host>
+	<Host>  
+		<name> sdsdl360-2.vdi.local </name>
+		<disk> /dev/sdh </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-3.vdi.local </name>
+		<disk> /dev/sdh </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-1.vdi.local </name>
+		<disk> /dev/sdi </disk>
+	</Host>
+	<Host>  
+		<name> sdsdl360-2.vdi.local </name>
+		<disk> /dev/sdi </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-3.vdi.local </name>
+		<disk> /dev/sdi </disk>
+	</Host>	
+-->
+</Benchmark>

@@ -1,0 +1,29 @@
+warmup = 0 
+measure = 3600
+sample = 5
+cooldown = 0 
+rest = 0 
+update = 0 
+verbose = true 
+pretty = true 
+histogram = false 
+align = 0 
+delay = 0 
+accelerator = 1 
+cachehits = 00 
+rwstats = false 
+prefill = false
+
+
+# Population: 1 256k segmented write
+!phase blocksize=524288 size=1 access=segmented qdepth=2 reads=00 offset=[0.0,1.0]
+#!phase blocksize=8192  size=1 access=random qdepth=10 reads=100 offset=[0.0,0.1467]
+svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE1
+svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE2
+svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE3
+svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE1
+svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE2
+svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE3
+svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE1
+svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE2
+svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE3

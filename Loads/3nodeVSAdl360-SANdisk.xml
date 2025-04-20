@@ -1,0 +1,84 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> dl360-3n-SD-run04 </name>
+		<path> .\\3ndl360san.esx6 </path>
+		<description> 
+DL360 - 3 Node VSA Benchmark
+	LeftHand OS and W2k12 R2 on a independent 150GB LUN
+	LeftHand OS 12.5.00.0583.0
+	VSAs with 1.2TB SANdisk card (RDM)
+Disks per server:
+3 x 602 GB Volumes
+   Network RAID 10
+   AO enabled, all data resides on Tier 0  (1.3TB SANdisk Flashcards) 
+   Disks mapped the to the ESX server (VMware MPIO, Round-Robin) 
+   2 300GB vdisks per volume were assigned to each bench vm
+   cluster utilization: 100%
+Servers: virtual 
+	sdsbenchvm-1, 
+	sdsbenchvm-2, 
+	sdsbenchvm-3
+Non-Local gateway nodes were assured by a controlled mounting of the volumes on the ESX server. 
+VMware MPIO on DL360 systems
+prefill: yes
+start: 01/29/2016
+(c) Thomas Beha 
+
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 15 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>
+	<Load>
+		<access> segmented </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 15 </rspmax>
+		<size> 262144 </size>
+		<qstep> 1 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>	
+	<Host> 
+	    <name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>		
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>	
+</Benchmark>

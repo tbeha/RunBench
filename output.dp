@@ -1,0 +1,335 @@
+vesper v5.7.0 windows/x86 - 26/Jan/17 01:36:40  HP Company Confidential
+
+Connecting to 4 servers:
+  192.168.63.151...	vesper v5.7.0 windows/x86_64 - ok
+  192.168.63.152...	vesper v5.7.0 windows/x86_64 - ok
+  192.168.63.153...	vesper v5.7.0 windows/x86_64 - ok
+  192.168.63.154...	vesper v5.7.0 windows/x86_64 - ok
+
+Phase 1 initialize
+
+Workload:
+  Host[1] = 192.168.63.151
+    Phase[1]  warmup = 60  measure = 90  sample = 15  cooldown = 10
+              rest = 80
+      Target[1] = \\.\PHYSICALDRIVE2
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111160238826592
+      Target-end
+      Target[2] = \\.\PHYSICALDRIVE3
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111179485050314
+      Target-end
+    Phase-end
+  Host-end
+  Host[2] = 192.168.63.152
+    Phase[1]  warmup = 60  measure = 90  sample = 15  cooldown = 10
+              rest = 80
+      Target[1] = \\.\PHYSICALDRIVE2
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111163819798580
+      Target-end
+      Target[2] = \\.\PHYSICALDRIVE3
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111181722475665
+      Target-end
+    Phase-end
+  Host-end
+  Host[3] = 192.168.63.153
+    Phase[1]  warmup = 60  measure = 90  sample = 15  cooldown = 10
+              rest = 80
+      Target[1] = \\.\PHYSICALDRIVE2
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111169190710848
+      Target-end
+      Target[2] = \\.\PHYSICALDRIVE3
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111183959901016
+      Target-end
+    Phase-end
+  Host-end
+  Host[4] = 192.168.63.154
+    Phase[1]  warmup = 60  measure = 90  sample = 15  cooldown = 10
+              rest = 80
+      Target[1] = \\.\PHYSICALDRIVE2
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111171875621269
+      Target-end
+      Target[2] = \\.\PHYSICALDRIVE3
+        direct = true
+        qdepth = 14
+        async = false
+        delay = 0 nsecs
+        access = segmented
+        offset = [0.0, 1.0]
+        reads = 100%
+        read size = 1 blocks
+        blocksize = 262144 bytes
+        seed = 111191569330061
+      Target-end
+    Phase-end
+  Host-end
+Workload-end
+
+Target sizes:
+  Host = 192.168.63.151
+    Target = \\.\PHYSICALDRIVE2 - 402653184000 bytes
+    Target = \\.\PHYSICALDRIVE3 - 402653184000 bytes
+  Host-end
+  Host = 192.168.63.152
+    Target = \\.\PHYSICALDRIVE2 - 402653184000 bytes
+    Target = \\.\PHYSICALDRIVE3 - 402653184000 bytes
+  Host-end
+  Host = 192.168.63.153
+    Target = \\.\PHYSICALDRIVE2 - 402653184000 bytes
+    Target = \\.\PHYSICALDRIVE3 - 402653184000 bytes
+  Host-end
+  Host = 192.168.63.154
+    Target = \\.\PHYSICALDRIVE2 - 402653184000 bytes
+    Target = \\.\PHYSICALDRIVE3 - 402653184000 bytes
+  Host-end
+Target sizes-end
+
+Phase 1 ready
+
+Phase 1 execute
+
+Host 192.168.63.152:
+  go delta = 0.0027192 secs
+  start delta = 0.186539 secs
+  finish delta = 0.305256 secs
+  processing overhead = 0.00564897%
+
+                                                Rsp Tm
+Host    Device    Sample    io/sec    MB/sec    (msec)    Max Rt
+----    ------    ------   -------    ------    ------   -------
+192.168.63.152
+        \\.\PHYSICALDRIVE2
+                       1     259.1      67.9    54.051     522.3
+                       2     255.6      67.0    54.657     825.5
+                       3     252.1      66.1    55.586     441.5
+                       4     261.5      68.5    53.608     662.2
+                       5     257.9      67.6    54.173     503.0
+                       6     251.3      65.9    55.855     428.8
+                           -------    ------    ------   -------
+                             256.2      67.2    54.643     825.5
+
+        \\.\PHYSICALDRIVE3
+                       1     248.9      65.3    56.292     612.2
+                       2     250.1      65.6    55.875     780.3
+                       3     252.8      66.3    55.400     502.4
+                       4     259.5      68.0    53.962     404.9
+                       5     253.0      66.3    55.346     580.9
+                       6     252.6      66.2    55.433     512.7
+                           -------    ------    ------   -------
+                             252.8      66.3    55.375     780.3
+
+        total
+                       1     508.0     133.2    55.149     612.2
+                       2     505.7     132.6    55.260     825.5
+                       3     504.9     132.3    55.493     502.4
+                       4     521.0     136.6    53.784     662.2
+                       5     510.9     133.9    54.754     580.9
+                       6     503.9     132.1    55.643     512.7
+                           -------    ------    ------   -------
+                             509.1     133.4    55.007     825.5
+
+
+Host 192.168.63.151:
+  go delta = 0.000399002 secs
+  start delta = 0.107458 secs
+  finish delta = 0.644324 secs
+  processing overhead = 0.0179308%
+
+                                                Rsp Tm
+Host    Device    Sample    io/sec    MB/sec    (msec)    Max Rt
+----    ------    ------   -------    ------    ------   -------
+192.168.63.151
+        \\.\PHYSICALDRIVE2
+                       1     256.5      67.2    54.615     504.6
+                       2     247.1      64.8    56.693     713.0
+                       3     260.9      68.4    53.633     689.2
+                       4     249.7      65.4    56.160     517.1
+                       5     261.9      68.7    53.404     455.0
+                       6     247.9      65.0    56.688     808.9
+                           -------    ------    ------   -------
+                             254.0      66.6    55.166     808.9
+
+        \\.\PHYSICALDRIVE3
+                       1     251.4      65.9    55.656     630.7
+                       2     260.0      68.2    53.955     511.7
+                       3     249.7      65.4    56.104     503.4
+                       4     257.3      67.4    54.392     654.1
+                       5     249.7      65.4    56.027     536.8
+                       6     263.0      68.9    53.531     710.4
+                           -------    ------    ------   -------
+                             255.2      66.9    54.923     710.4
+
+        total
+                       1     507.9     133.2    55.130     630.7
+                       2     507.1     132.9    55.289     713.0
+                       3     510.5     133.8    54.842     689.2
+                       4     506.9     132.9    55.263     654.1
+                       5     511.6     134.1    54.684     536.8
+                       6     510.9     133.9    55.063     808.9
+                           -------    ------    ------   -------
+                             509.2     133.5    55.044     808.9
+
+
+Host 192.168.63.153:
+  go delta = 0.00202823 secs
+  start delta = 0.197213 secs
+  finish delta = 0.337656 secs
+  processing overhead = 0.0229755%
+
+                                                Rsp Tm
+Host    Device    Sample    io/sec    MB/sec    (msec)    Max Rt
+----    ------    ------   -------    ------    ------   -------
+192.168.63.153
+        \\.\PHYSICALDRIVE2
+                       1     240.9      63.1    58.104     807.4
+                       2     242.8      63.6    57.595     661.2
+                       3     239.1      62.7    58.518     541.1
+                       4     231.2      60.6    60.598    1007.9
+                       5     237.3      62.2    59.018     436.5
+                       6     230.9      60.5    60.547     488.1
+                           -------    ------    ------   -------
+                             237.0      62.1    59.041    1007.9
+
+        \\.\PHYSICALDRIVE3
+                       1     246.9      64.7    56.697     503.3
+                       2     256.7      67.3    54.442     786.5
+                       3     257.7      67.6    54.440     508.2
+                       4     254.8      66.8    54.915     531.0
+                       5     259.9      68.1    53.874     567.1
+                       6     273.7      71.7    51.222     631.4
+                           -------    ------    ------   -------
+                             258.3      67.7    54.215     786.5
+
+        total
+                       1     487.8     127.9    57.392     807.4
+                       2     499.5     130.9    55.974     786.5
+                       3     496.8     130.2    56.402     541.1
+                       4     486.0     127.4    57.619    1007.9
+                       5     497.2     130.3    56.329     567.1
+                       6     504.5     132.3    55.489     631.4
+                           -------    ------    ------   -------
+                             495.3     129.8    56.524    1007.9
+
+
+Host 192.168.63.154:
+  go delta = 0.00119496 secs
+  start delta = 0.354876 secs
+  finish delta = 0.360808 secs
+  processing overhead = 0.0194811%
+
+                                                Rsp Tm
+Host    Device    Sample    io/sec    MB/sec    (msec)    Max Rt
+----    ------    ------   -------    ------    ------   -------
+192.168.63.154
+        \\.\PHYSICALDRIVE2
+                       1     233.9      61.3    59.620     797.6
+                       2     253.7      66.5    55.172    1003.2
+                       3     248.2      65.1    56.539     533.7
+                       4     242.7      63.6    57.561     653.7
+                       5     242.7      63.6    57.729     652.8
+                       6     252.3      66.1    55.665     792.2
+                           -------    ------    ------   -------
+                             245.6      64.4    57.007    1003.2
+
+        \\.\PHYSICALDRIVE3
+                       1     252.3      66.1    55.497     587.2
+                       2     250.5      65.7    55.908     678.8
+                       3     245.8      64.4    56.805     409.0
+                       4     249.3      65.4    56.191     611.5
+                       5     254.0      66.6    55.177     592.3
+                       6     259.3      68.0    54.251     542.8
+                           -------    ------    ------   -------
+                             251.9      66.0    55.625     678.8
+
+        total
+                       1     486.2     127.5    57.481     797.6
+                       2     504.1     132.2    55.537    1003.2
+                       3     494.0     129.5    56.671     533.7
+                       4     492.0     129.0    56.867     653.7
+                       5     496.7     130.2    56.423     652.8
+                       6     511.6     134.1    54.948     792.2
+                           -------    ------    ------   -------
+                             497.4     130.4    56.307    1003.2
+
+                                                Rsp Tm
+Grand Total       Sample    io/sec    MB/sec    (msec)    Max Rt
+==============    ======   =======    ======    ======   =======
+
+                       1    1989.9     521.6    56.264     807.4
+                       2    2016.5     528.6    55.514    1003.2
+                       3    2006.2     525.9    55.842     689.2
+                       4    2005.9     525.8    55.843    1007.9
+                       5    2016.4     528.6    55.536     652.8
+                       6    2030.9     532.4    55.284     808.9
+                           -------    ------    ------   -------
+                            2011.0     527.2    55.712    1007.9
+
+Network time delay:
+  start delta = 0.0023161 secs
+  finish delta = 0.00391539 secs
+
+Phase 1 complete
+
+Disconnecting from servers...done

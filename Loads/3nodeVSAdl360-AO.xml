@@ -1,0 +1,74 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> dl360-AO-run08 </name>
+		<path> .\\3ndl360-centos-ao </path>
+		<description> 
+DL360 - 3 Node VSA Benchmark
+	LeftHand OS 12.6.00.0155.0
+	CentOS KVM VSAs with raw disks
+    SmartArray cache default setting 10/90 r/w, no cache for the SSDs
+    7 x 1.2TB 10k SAS HDD per VSA;  
+	3 x 800 GB SSD
+Disks per server:
+	6 x 1TB AO enabled Volumes
+	Network RAID 10
+	AO enabled 
+	Disks mapped the to sdsbenchvm's via iSCSI
+	LeftHand MPIO DSM installed on the benchvm's
+	cluster utilization: 
+Servers: virtual 
+	sdsbenchvm-1, 
+	sdsbenchvm-2, 
+	sdsbenchvm-3
+prefill: offset=[0.0,1.0] filled before the baseline run
+no NIC Teaming on the DL360 systems
+Start: 07/05/2016
+(c) Thomas Beha 
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>  
+
+	<Host> 
+	    <name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>		
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE1 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>	
+</Benchmark>

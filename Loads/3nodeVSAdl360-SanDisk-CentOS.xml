@@ -1,0 +1,81 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> dl360-3n-sandisk-run04 </name>
+		<path> .\\3ndl360sandisk.centos </path>
+		<description> 
+Baseline performance: 8kB random, 256kB segmented
+DL360 - 3 Node VSA Benchmark - baseline run
+	LeftHand OS 12.6.00.0155.0
+	CentOS KVM VSAs with raw disks
+	1.3 TB SanDisk PCIe cards
+	VSAs now with 8GB memory, 5 vCPUs
+Disks per W2k12R2 bench VM:
+6 x 300 GB Volumes
+   Network RAID 10
+   cluster utilization: 0%
+Servers: benchVMs (Windows 2012R2) external on VMware Server (HC250)
+	svbenchvm-1, 
+	svbenchvm-2, 
+	svbenchvm-3 
+data locality: VSA gateway nodes were hosted on the same DL360 server (CMC site definition)
+prefill: yes
+Start: 05/16/2016
+(c) Thomas Beha 
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 10 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>  
+	<Load>
+		<access> segmented </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 262144 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>
+	<Host> 
+	    <name> 192.168.55.44 </name>
+		<disk> \\.\PHYSICALDRIVE7 </disk>
+	</Host>
+	<Host>  
+		<name> 192.168.55.45 </name>
+		<disk> \\.\PHYSICALDRIVE7 </disk>
+	</Host>		
+	<Host>  
+		<name> 192.168.55.46 </name>
+		<disk> \\.\PHYSICALDRIVE7 </disk>
+	</Host>	
+	<Host>  
+		<name> 192.168.55.44 </name>
+		<disk> \\.\PHYSICALDRIVE8 </disk>
+	</Host>
+	<Host>  
+		<name> 192.168.55.45 </name>
+		<disk> \\.\PHYSICALDRIVE8 </disk>
+	</Host>	
+	<Host>  
+		<name> 192.168.55.46 </name>
+		<disk> \\.\PHYSICALDRIVE8 </disk>
+	</Host>	
+</Benchmark>

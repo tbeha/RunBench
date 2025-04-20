@@ -1,0 +1,109 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> dl360-3n-hdd-run01 </name>
+		<path> .\\3ndl360ssdsas.esx6 </path>
+		<description> 
+DL360 - 3 Node VSA Benchmark
+	LeftHand OS and W2k12 R2 on a independent 150GB LUN
+	LeftHand OS 12.5.00.0583.0
+	VSAs with RDM disks
+    SmartArray cache default setting 10/90 r/w, no cache for the SSDs
+Disks per server:
+12x 800 GB Volumes
+   Network RAID 10
+   AO disabled, all data resides on Tier 1
+   Disks mapped the to sdsbenchvm's via iSCSI
+   LeftHand MPIO DSM installed on the benchvm's
+   cluster utilization: 96%
+Servers: virtual 
+	sdsbenchvm-1, 
+	sdsbenchvm-2, 
+	sdsbenchvm-3
+data locality: benchvm and VSA gateway nodes were hosted on the same DL360 server (CMC site definition)
+prefill: completed
+LeftHand MPIO DSM (RoundRobin) on the benchvm's (each one had 2 iSCSI connections), 
+no NIC Teaming on the DL360 systems
+Start: 01/12/2016
+(c) Thomas Beha 
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 30 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>
+	<Load>
+		<access> segmented </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 50 </rspmax>
+		<size> 262144 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>	
+	<Host> 
+	    <name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE3 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE3 </disk>
+	</Host>		
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE3 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE4 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE4 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE4 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE5 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE5 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE5 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-1.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE6 </disk>
+	</Host>
+	<Host>  
+		<name> svbenchvm-2.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE6 </disk>
+	</Host>	
+	<Host>  
+		<name> svbenchvm-3.vdi.local </name>
+		<disk> \\.\PHYSICALDRIVE6 </disk>
+	</Host>		
+</Benchmark>

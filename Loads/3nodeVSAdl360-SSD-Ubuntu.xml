@@ -1,0 +1,82 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> dl360-3n-ssd-run01 </name>
+		<path> .\\3ndl360ssdsas.ubuntu </path>
+		<description> 
+DL360 - 3 Node VSA Benchmark - baseline run
+	LeftHand OS 12.5.00.0583.0
+	Ubuntu KVM VSAs with raw disks
+    SmartArray cache default setting 10/90 r/w, no cache for the SSDs
+Disks per server:
+6 x 180 GB Volumes
+   Network RAID 10
+   AO enabled, all data resides on Tier 0  
+   Disks mapped the to Ubuntu server via iSCSI
+   cluster utilization: 96%
+Servers: physikal (Ubuntu 14.04)
+	sdsdl360-1, 
+	sdsdl360-2, 
+	sdsdl360-3
+	NIC Teaming on the DL360 systems
+data locality: benchvm and VSA gateway nodes were hosted on the same DL360 server (CMC site definition)
+prefill: yes
+Start: 04/03/2016
+(c) Thomas Beha 
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 10 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>  
+	<Load>
+		<access> segmented </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 262144 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>
+	<Host> 
+	    <name> sdsdl360-1.vdi.local </name>
+		<disk> /dev/sdd </disk>
+	</Host>
+	<Host>  
+		<name> sdsdl360-2.vdi.local </name>
+		<disk> /dev/sdd </disk>
+	</Host>		
+	<Host>  
+		<name> sdsdl360-3.vdi.local </name>
+		<disk> /dev/sdd </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-1.vdi.local </name>
+		<disk> /dev/sde </disk>
+	</Host>
+	<Host>  
+		<name> sdsdl360-2.vdi.local </name>
+		<disk> /dev/sde </disk>
+	</Host>	
+	<Host>  
+		<name> sdsdl360-3.vdi.local </name>
+		<disk> /dev/sde </disk>
+	</Host>	
+</Benchmark>

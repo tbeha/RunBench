@@ -1,0 +1,25 @@
+warmup=  60 
+measure=  90 
+sample=  15 
+cooldown=  10 
+rest=  80 
+update = 0 
+verbose = true 
+pretty = true 
+histogram = false 
+align = 0 
+delay = 0 
+accelerator = 1 
+cachehits = 0 
+rwstats = false 
+prefill = false 
+ 
+!phase blocksize=  262144  size=1 access=  segmented  qdepth=14 reads=100 offset= [0.0,1.0] 
+192.168.63.151@\\.\PHYSICALDRIVE2
+192.168.63.152@\\.\PHYSICALDRIVE2
+192.168.63.153@\\.\PHYSICALDRIVE2
+192.168.63.154@\\.\PHYSICALDRIVE2
+192.168.63.151@\\.\PHYSICALDRIVE3
+192.168.63.152@\\.\PHYSICALDRIVE3
+192.168.63.153@\\.\PHYSICALDRIVE3
+192.168.63.154@\\.\PHYSICALDRIVE3

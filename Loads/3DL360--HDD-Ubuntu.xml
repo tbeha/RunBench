@@ -1,0 +1,65 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> dl360-3n-ssd-run04 </name>
+		<path> .\\3ndl360ssdsas.ubuntu </path>
+		<description> 
+DL360 - 3 Node VSA Benchmark - baseline run
+    SmartArray cache default setting 10/90 r/w, no cache for the SSDs
+Disks per server:
+3 x 800 GB Volumes
+   Raw SmartArray Volumes - SSD
+Servers: physikal (Ubuntu 14.04)
+	sdsdl360-1, 
+	sdsdl360-2, 
+	sdsdl360-3
+	NIC Teaming on the DL360 systems
+data locality: 
+prefill: yes
+Start: 04/11/2016
+(c) Thomas Beha 
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 5 </rspmax>
+		<size> 8192 </size>
+		<qstep> 4 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>  
+	<Load>
+		<access> segmented </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 10 </rwstep>
+		<rspmax> 10 </rspmax>
+		<size> 262144 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load>
+	<Host> 
+	    <name> sdsdl360-1.vdi.local </name>
+		<disk> /dev/sdb1 </disk>
+	</Host>
+	<Host>  
+		<name> sdsdl360-2.vdi.local </name>
+		<disk> /dev/sdb1 </disk>
+	</Host>		
+	<Host>  
+		<name> sdsdl360-3.vdi.local </name>
+		<disk> /dev/sdb1 </disk>
+	</Host>		
+</Benchmark>

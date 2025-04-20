@@ -1,0 +1,244 @@
+<Benchmark>
+	<!-- Benchmark Setup Description -->
+	<!-- Thomas Beha -->
+	<Runinfo>
+		<name> 2n-hc380-sas-run5</name>
+		<path> .\\2nHC380 </path>
+		<description> 
+2-node HC380 Baseline run
+	LeftHand OS 12.6.00.0155.0
+	HC380 VDI with single Hybrid Storage Block
+	8kr and 256ks baseline run both tiers combined
+Disks per server:
+4 x 90 GB Volumes (Tier 0)
+2 x 375 GB Volumes (Tier 1)
+   Network RAID 10
+   AO not permitted, all data resides on Tier 1  
+   Disks mapped the to Windows benchvms via iSCSI
+   cluster utilization: 0
+Workload VMs: 
+	hc380-bench-01, hc380-bench-02, hc380-bench-03, hc380-bench-04
+	Windows 2012 R2 VMs
+	located on a separate datastore where AO is disabled
+data locality: no datalocality definition
+prefill: yes
+Start: 12/15/2016
+(c) Thomas Beha 
+		</description>
+	</Runinfo>
+	<Phase>
+		<warmup> 60 </warmup>
+		<measure> 90 </measure>
+		<sample> 15 </sample>
+		<cooldown> 10 </cooldown>
+		<rest> 80 </rest>
+	</Phase>
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.05] </offset>
+	</Load>  	
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.08] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.1] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.12] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.14] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.16] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.2] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.24] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.3] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.4] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.5] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.6] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.7] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.8] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,0.9] </offset>
+	</Load> 
+	<Load>  
+		<access> random </access>
+		<rwstart> 0 </rwstart>
+		<rwend> 100 </rwend>
+		<rwstep> 50 </rwstep>
+		<rspmax> 20 </rspmax>
+		<size> 8192 </size>
+		<qstep> 2 </qstep>
+	    <cachehits> 0 </cachehits>
+		<offset> [0.0,1.0] </offset>
+	</Load> 
+	<Host> 
+	    <name> 192.168.63.151 </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>
+	<Host> 
+	    <name> 192.168.63.152 </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>
+	<Host> 
+	    <name> 192.168.63.153 </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>
+	<Host> 
+	    <name> 192.168.63.154 </name>
+		<disk> \\.\PHYSICALDRIVE2 </disk>
+	</Host>	
+	<Host> 
+	    <name> 192.168.63.151 </name>
+		<disk> \\.\PHYSICALDRIVE3 </disk>
+	</Host>
+	<Host> 
+	    <name> 192.168.63.152 </name>
+		<disk> \\.\PHYSICALDRIVE3 </disk>
+	</Host>
+	<Host> 
+	    <name> 192.168.63.153 </name>
+		<disk> \\.\PHYSICALDRIVE3 </disk>
+	</Host>
+	<Host> 
+	    <name> 192.168.63.154 </name>
+		<disk> \\.\PHYSICALDRIVE3 </disk>
+	</Host>	
+</Benchmark>

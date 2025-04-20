@@ -1,0 +1,42 @@
+warmup = 0 
+measure = 60
+sample = 6
+cooldown = 0 
+rest = 0 
+update = 0 
+verbose = true 
+pretty = true 
+histogram = false 
+align = 0 
+delay = 0 
+accelerator = 1 
+cachehits = 00 
+rwstats = false 
+prefill = true
+
+# Population: 1 256k segmented write
+!phase blocksize=1048576  size=1 access=segmented qdepth=2 reads=0
+#svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE1
+#svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE2
+#svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE3
+#svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE4
+#svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE5
+#svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE6
+svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE7
+svbenchvm-1.vdi.local@\\.\PHYSICALDRIVE8
+#svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE1
+#svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE2
+#svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE3
+#svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE4
+#svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE5
+#svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE6
+svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE7
+svbenchvm-2.vdi.local@\\.\PHYSICALDRIVE8
+#svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE1
+#svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE2
+#svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE3
+#svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE4
+#svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE5
+#svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE6
+svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE7
+svbenchvm-3.vdi.local@\\.\PHYSICALDRIVE8
